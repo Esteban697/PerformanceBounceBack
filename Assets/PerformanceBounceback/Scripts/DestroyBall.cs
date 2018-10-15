@@ -41,7 +41,6 @@ public class DestroyBall : MonoBehaviour {
         {
             gameObject.SetActive(false);
             CancelInvoke();
-            Debug.Log("Thrown Ball returned to Pool");
         }
     }
 }
