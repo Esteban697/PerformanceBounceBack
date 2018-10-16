@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    [HideInInspector]
     public int score;
 
 	// Use this for initialization

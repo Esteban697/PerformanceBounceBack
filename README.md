@@ -17,21 +17,25 @@ on framerate and performance.
 to Start to be run just once to create the objects to score to add 1 point and particles to appear if the ball hit the trampoline and bounced. This took the impact
 of this script to a mere 1% of the CPU Usage in the Unity Profiler from having around 50% before implementing the strategy.
 
-- In terms of Lighting, the lighting rendering path was turned to the one highly recommended for VR: Forward. The Anti aliasing was enabled turning the MSAA to 4x.
-Backed lights
-Light probes
+- In terms of Lighting, the lighting rendering path was turned to the one highly recommended for VR: Forward. The Anti aliasing was enabled turning the MSAA to 8x.
+The shadow distance was reduced too 50 keeping the appearance of the shadows very similar. The point lights were baked to save in realtime light expense. Also, a 
+3D grid of light probe groups was added to the player's closer visible area.
+
 
 - In terms of physics, the Rigidbody.Sleep function was used to make the rigidbodies created for the ground trampolines to be disabled to save resources. A boolean 
 was created to prevent from looking for this component in the air trampolines sharing the script.
 
+
 - Dynamic and Static Batching was enabled. Selecting the "Ground Trampolines" that never move to "Static" for the static batching to work on them and living the
-"Air Trampolines" non-Static for the dynamic batching to work on them. The platform and factory was also marked "Static".
+"Air Trampolines" non-Static for the dynamic batching to work on them. The platform and factory was also marked "Static". I used a very useful Unity Package to filter
+non-static objects in the scene from [this link](http://spreys.com/wp-content/uploads/2017/06/FilterNonStaticObjects.unitypackage)
 
 - In the Time Manager the Fixed Timestep was changed to 0.011111 as it follow the 90 FPS criteria we are aiming for in the project. Also, the Maxmimum
 Timestep Allowed was changed to 0.03333333 because it allows for a quick drop to 30 FPS is something goes out of place. Also, a "TargetFrameRate" script wass created
 to fixed a target framerate for the application of 90 FPS.
 
-- The Code Cleanup was implemented by removing some Debug.Log functions that are not usefull for the final release.
+- The Code Cleanup was implemented by removing some Debug.Log functions that are not useful for the final release. Instead of using GameObject.Find the references for
+GameManager are set in the Inspector.
 
 The Game keeps a framerate above 100 FPS in the PC it was tested. Hope you enjoy testing in yours!
 

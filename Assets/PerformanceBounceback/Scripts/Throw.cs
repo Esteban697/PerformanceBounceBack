@@ -7,7 +7,7 @@ public class Throw : MonoBehaviour
 
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device device;
-    public float throwForce = 2f;
+    private float throwForce = 2f;
 
     // Use this for initialization
     void Start()
