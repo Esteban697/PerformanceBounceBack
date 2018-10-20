@@ -1,11 +1,11 @@
-# Performance Bounceback Starter Project
+# Performance Bounceback VR Project
 ### by Esteban Struve
 
 This project focuses on optimizing the VR application for desktop with the strategies taught in the 3rd Term of Udacity's VR developer Nanodegree.
 The gameplay consists of a room full of trampolines and balls spawned every 0.5 seconds in the player's reach. The player is intended to grab any of these
 spawned balls and through it to score 1 point each time the ball bounces from a trampoline before hitting the ground.
 
-The goal as developer for this project is to reach a steady 90 FPS with the proper optmization strategies. They include:
+The goal as developer for this project is to reach a steady 90 FPS with the proper optimization strategies. They include:
 
 - The "BallSpawner" script had a defective object pooling implemented without a disabling criteria to reuse the balls. Instead they continue to grow the pool.
 So, I modified the script to perform a search for available resources in the pool (if not just add a need ball to the pool) and a "DestroyBall" script.
